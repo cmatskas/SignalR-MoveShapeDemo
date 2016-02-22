@@ -29,7 +29,7 @@ namespace MoveShape.Web.MoveShape
             return Clients.All.clientCountChanged(_connections.Count);
         }
 
-        public override Task OnDisconnected()
+        public override Task OnDisconnected(bool stopCalled)
         {
             object value;
             _connections.TryRemove(Context.ConnectionId, out value);
